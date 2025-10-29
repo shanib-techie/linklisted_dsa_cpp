@@ -12,7 +12,7 @@ class Node{
 };
 
 void display_by_rec(Node* head){
-    if (head == NULL) return;
+    if (head == NULL) return;//garbage
     cout<<head->val<<" ";
     display_by_rec(head->next);
 }
