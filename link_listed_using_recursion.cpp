@@ -1,23 +1,26 @@
 #include <iostream>
 using namespace std;
 class Node{
+    public:
     int val;
     Node* next;
+
     Node(int val){
         this->val =val;
         this->next = NULL;
     }
 };
+
 void display_by_rec(Node* head){
     if (head == NULL) return;
-    display_by_rec(head->next);
     cout<<head->val<<" ";
+    display_by_rec(head->next);
 }
 
 void reverse_display_by_rec(Node* head){
     if (head == NULL) return;
+    reverse_display_by_rec(head->next);
     cout<<head->val<<" ";
-    display_by_rec(head->next)
 }
 int size(Node* head){
     Node* temp = head;
@@ -38,6 +41,8 @@ int main(){
     b->next = c;
     c->next =d;
     display_by_rec(a);
+    cout<<"\n";
     reverse_display_by_rec(a);
-    cout<<size(a);
+    cout<<"\n size : "<<size(a);
+ 
 }
