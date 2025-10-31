@@ -21,15 +21,32 @@ Node* del_by_idx(Node* head,Node* tar){
         return head;
     }
     Node* temp = head;
-    while (temp->next != head){
+    while (temp->next != tar){
         temp = temp->next;
     }
     temp->next = temp->next->next;
+    return head;
 }
 
 
 
-// delete by valu
+
+
+// delete by value
+Node* del_by_val(Node* head , int tarval){
+    if(head->val == tarval){
+       head = head->next;
+       return head;
+    }
+    Node* temp = head;
+    while (temp->next->val != tarval)
+    {
+        temp =temp->next;
+    }
+    temp->next = temp->next->next;
+    return head;
+    
+}
 
 
 
@@ -65,6 +82,20 @@ int main(){
     a->next = b;
     b->next = c;
     c->next = d;
-    display(a);
-    cout<<size(a);
+
+
+
+    // del_by_index
+    // display(a);
+    // del_by_idx(a,c);
+    // display(a);
+
+
+
+    // del by val
+    // Node* head = a;
+    // display(head);
+    // head = del_by_val(a,22);
+    // display(head);
+
 }
