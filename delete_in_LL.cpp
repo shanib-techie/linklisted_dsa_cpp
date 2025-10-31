@@ -1,4 +1,108 @@
-#include <iostream>
+// #include <iostream>
+// using namespace std;
+// class Node{
+//     public:
+//     int val;
+//     Node* next;
+//     Node(int val){
+//         this->val = val;
+//         this->next = NULL;
+//     }
+// };
+
+
+
+
+
+// // DELETE NODE BY INDEX 
+// Node* del_by_idx(Node* head,Node* tar){
+//     if(head == tar){
+//         head = head->next;
+//         return head;
+//     }
+//     Node* temp = head;
+//     while (temp->next != tar){
+//         temp = temp->next;
+//     }
+//     temp->next = temp->next->next;
+//     return head;
+// }
+
+
+
+
+
+// // delete by value
+// Node* del_by_val(Node* head , int tarval){
+//     if(head->val == tarval){
+//        head = head->next;
+//        return head;
+//     }
+//     Node* temp = head;
+//     while (temp->next->val != tarval)
+//     {
+//         temp =temp->next;
+//     }
+//     temp->next = temp->next->next;
+//     return head;
+    
+// }
+
+
+
+// void display(Node* head){
+//     Node* temp = head;
+//     // delete by val
+//     cout<<"\n";
+//     while(temp != NULL){
+//         cout<<temp->val<<" ";
+//         temp = temp->next;
+//     }  
+//     cout<<"\n";
+// }
+// int size(Node* head){
+//     int n = 0;
+//     Node* temp = head;
+//     while(temp!=NULL){
+//         n++;
+//         temp = temp->next;
+//     }
+//     return n;
+    
+// }
+
+
+
+// int main(){
+//     Node* a = new Node(10);
+//     Node* b = new Node(30);
+//     Node* c = new Node(22);
+//     Node* d = new Node(55);
+
+//     a->next = b;
+//     b->next = c;
+//     c->next = d;
+
+
+
+//     // del_by_index
+//     // display(a);
+//     // del_by_idx(a,c);
+//     // display(a);
+
+
+
+//     // del by val
+//     // Node* head = a;
+//     // display(head);
+//     // head = del_by_val(a,22);
+//     // display(head);
+
+// }
+
+
+
+#include<iostream>
 using namespace std;
 class Node{
     public:
@@ -9,93 +113,41 @@ class Node{
         this->next = NULL;
     }
 };
-
-
-
-
-
-// DELETE NODE BY INDEX 
-Node* del_by_idx(Node* head,Node* tar){
-    if(head == tar){
-        head = head->next;
-        return head;
-    }
-    Node* temp = head;
-    while (temp->next != tar){
-        temp = temp->next;
-    }
-    temp->next = temp->next->next;
-    return head;
-}
-
-
-
-
-
-// delete by value
-Node* del_by_val(Node* head , int tarval){
-    if(head->val == tarval){
-       head = head->next;
-       return head;
-    }
-    Node* temp = head;
-    while (temp->next->val != tarval)
-    {
-        temp =temp->next;
-    }
-    temp->next = temp->next->next;
-    return head;
-    
-}
-
-
-
 void display(Node* head){
     Node* temp = head;
-    // delete by val
-    cout<<"\n";
-    while(temp != NULL){
-        cout<<temp->val<<" ";
-        temp = temp->next;
-    }  
-    cout<<"\n";
-}
-int size(Node* head){
-    int n = 0;
-    Node* temp = head;
     while(temp!=NULL){
-        n++;
+        display(head->next);
+        cout<<head->val;
+    }
+
+Node* delnode(Node* head ,Node* tarval){
+    if(head == tarval){
+     head= head->next;
+     return head;           
+    }
+    Node*temp = head;
+    while(temp->next != tarval){
         temp = temp->next;
     }
-    return n;
-    
+    temp->next = temp->next->next;
+    return head;
+
+}    
+
 }
 
-
-
-int main(){
-    Node* a = new Node(10);
-    Node* b = new Node(30);
-    Node* c = new Node(22);
-    Node* d = new Node(55);
-
+int main() {
+	// your code goes here
+    Node a = new Node(1);
+    Node b = new Node(2);
+    Node c  = new Node(3);
+    Node d = new Node(4);
+    Node e = new Node(5);
     a->next = b;
-    b->next = c;
+    b->next =c;
     c->next = d;
-
-
-
-    // del_by_index
-    // display(a);
-    // del_by_idx(a,c);
-    // display(a);
-
-
-
-    // del by val
-    // Node* head = a;
-    // display(head);
-    // head = del_by_val(a,22);
-    // display(head);
-
-}
+    d->next = e;
+    display(a);
+    delnode(a,c);
+	return 0;
+} 
