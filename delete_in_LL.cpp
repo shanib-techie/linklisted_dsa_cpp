@@ -9,11 +9,6 @@
 //         this->next = NULL;
 //     }
 // };
-
-
-
-
-
 // // DELETE NODE BY INDEX 
 // Node* del_by_idx(Node* head,Node* tar){
 //     if(head == tar){
