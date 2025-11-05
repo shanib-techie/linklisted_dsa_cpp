@@ -24,10 +24,10 @@ Node* nth_ele_from_end(Node* head , int n){
         head = head->next;
         return head;
     }
-   int m = size-n+1;
+   int m = (size-n)+1;
    int idx = m-1;
    temp = head;
-   for(int i = 1;i<=idx;i++){
+   for(int i = 1;i<idx;i++){
       temp = temp->next;
    }
    temp->next = temp->next->next;
@@ -53,6 +53,6 @@ int main(){
     a->next = b;
     b->next = c;
     c->next = d;
-    cout<<nth_ele_from_end(a,2);
+   nth_ele_from_end(a,2);
     display(a);
 }
