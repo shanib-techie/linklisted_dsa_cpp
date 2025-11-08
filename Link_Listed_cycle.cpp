@@ -1,11 +1,10 @@
-
 #include <iostream>
 using namespace std;
 class Node{
     public:
     int val;
     Node* next;
-    Node(int val){
+    Node(int val){  
         this->val = val;
         this->next = NULL;
     }
@@ -58,7 +57,7 @@ int main(){
 
     a->next = b;
     b->next = c;
-    c->next = a;
+    c->next = d;
     // display_by_loop(a);
     // cout<<size(a);
     cout<<(check_cycle(a)?"cycle present":"no cycle");
