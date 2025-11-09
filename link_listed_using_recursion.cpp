@@ -25,7 +25,7 @@ void reverse_display_by_rec(Node* head){
 int size(Node* head){
     Node* temp = head;
     int n = 0;
-    if(temp!=NULL){
+    while(temp!=NULL){
         n++;
         temp = temp->next;
     }

@@ -9,6 +9,21 @@ using namespace std;
 //         this->next = NULL;
 //     }
 // };
+// Node* middle_ele(Node* head){
+//     Node* temp = head;
+//    int size = 0;
+//     while(temp!=NULL){
+//         size++;
+//         temp = temp->next;
+//     }
+//     int midIdx = size/2;
+//     Node* mid = head;
+//     for(int i =1;i<=midIdx;i++){
+//         mid = mid->next;
+//        }
+//        return mid;
+// }
+
 // void display_by_loop(Node* head){
 //     Node* temp = head;
 //     while(temp!=NULL){
@@ -27,22 +42,6 @@ using namespace std;
 //     return n;
     
 // }
-
-// Node* middle_ele(Node* head){
-//     Node* temp = head;
-//    int size = 0;
-//     while(temp!=NULL){
-//         size++;
-//         temp = temp->next;
-//     }
-//     int midIdx = size/2;
-//     Node* mid = head;
-//     for(int i =1;i<=midIdx;i++){
-//         mid = mid->next;
-//        }
-//        return mid;
-
-// }
 // int main(){
 //     Node* a = new Node(10);
 //     Node* b = new Node(30);
@@ -52,8 +51,8 @@ using namespace std;
 //     a->next = b;
 //     b->next = c;
 //     c->next = d;
-//     display_by_loop(a);
-//     cout<<size(a);
+//     // display_by_loop(a);
+//     // cout<<size(a);
 //    cout<<middle_ele(a)->val;
 // }
 
@@ -96,12 +95,12 @@ int main(){
     Node* b = new Node(22);
     Node* c = new Node(65);
     Node* d = new Node(5);
-    // Node* e = new Node(76);
+    Node* e = new Node(76);
 
     a->next = b;
     b->next =c;
     c->next =d;
-    // d->next =e;/////
+    d->next =e;/////
 
     cout<<by_two_pointer_print_mid(a)->val;
 }

@@ -12,6 +12,8 @@ class Node{
     }
 };
 
+
+// // same as delete in LL
 Node* nth_ele_from_end(Node* head , int n){
     Node * temp = head;
     int size = 0;
