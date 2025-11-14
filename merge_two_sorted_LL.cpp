@@ -1,25 +1,16 @@
 #include <iostream>
 using namespace std;
-class Node{
-    public:
+
+class Node {
+public:
     int val;
     Node* next;
-    Node(int val){
+
+    Node(int val) {
         this->val = val;
         this->next = NULL;
     }
 };
-
-// int size(Node* head){
-//     int n = 0;
-//     Node* temp = head;
-//     while(temp!=NULL){
-//         n++;
-//         temp = temp->next;
-//     }
-//     return n;
-    
-// }
 
 Node* merge_two_sorted(Node* a, Node* b) {
     Node* c = new Node(-1);  // dummy node
@@ -43,46 +34,66 @@ Node* merge_two_sorted(Node* a, Node* b) {
     return c->next; // skip dummy
 }
 
-void display_by_loop(Node* head){
-    Node* temp = head;
-    while(temp!=NULL){
-        cout<<temp->val<<" ";
-
-        temp = temp->next;
+void print(Node* head) {
+    while (head != NULL) {
+        cout << head->val << " ";
+        head = head->next;
     }
-}
-int main(){
-    Node* a = new Node(10);
-    Node* b = new Node(30);
-    Node* c = new Node(22);
-    Node* d = new Node(55);
-
-    a->next = b;
-    b->next = c;
-    c->next = d;
-
-
-
-//// SECOND LINKLISTED : 
-    Node* k = new Node(20);
-    Node* p = new Node(33);
-    Node* r = new Node(44);
-    Node * s = new Node(50);
-    k->next = p;
-    p->next = r;
-    r->next = s;
-
-
-
-
-  Node* merge =   merge_two_sorted(a,k);
-//   cout<<(merge)->val;
-    
-    display_by_loop(merge);
-    // cout<<"\n secont ll : ";
-    // display_by_loop(k);
-    // // cout<<size(a);
+    cout << endl;
 }
 
+int main() {
+     int n1, n2, val;
 
+    cout << "Enter number of nodes in first sorted linked list: ";
+    cin >> n1;
+
+    Node* a = NULL;
+    Node* tail1 = NULL;
+
+    for (int i = 1; i <= n1; i++) {
+        cout << "Enter value for node " << i << ": ";
+        cin >> val;
+        Node* newNode = new Node(val);
+        if (a == NULL) {
+            a = newNode;
+            tail1 = newNode;
+        } else {
+            tail1->next = newNode;
+            tail1 = newNode;
+        }
+    }
+
+    cout << "\nEnter number of nodes in second sorted linked list: ";
+    cin >> n2;
+
+    Node* k = NULL;
+    Node* tail2 = NULL;
+
+    for (int i = 1; i <= n2; i++) {
+        cout << "Enter value for node " << i << ": ";
+        cin >> val;
+        Node* newNode = new Node(val);
+        if (k == NULL) {
+            k = newNode;
+            tail2 = newNode;
+        } else {
+            tail2->next = newNode;
+            tail2 = newNode;
+        }
+    }
+
+    cout << "\nFirst List: ";
+    print(a);
+
+    cout << "Second List: ";
+    print(k);
+
+    Node* merged = merge_two_sorted(a, k);
+
+    cout << "\nMerged Sorted List: ";
+    print(merged);
+
+    return 0;
+}
 
