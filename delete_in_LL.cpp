@@ -9,6 +9,8 @@ class Node{
         this->next = NULL;
     }
 };
+
+
 // DELETE NODE BY INDEX 
 Node* del_by_idx(Node* head,Node* tar){
     if(head == tar){
@@ -78,16 +80,14 @@ int main(){
 
 
     // del_by_index
-    // display(a);
-    // del_by_idx(a,c);
-    // display(a);
-
-
+    display(a);
+    del_by_idx(a,c);
+    display(a);
 
     // del by val
-    display(a);
-    del_by_val(a,22);
-    display(a);
+    // display(a);
+    // del_by_val(a,22);
+    // display(a);
 
 }
 

@@ -26,11 +26,6 @@ bool check_cycle(Node* head){
     return false;
     
 }
-
-
-
-
-
 void display_by_loop(Node* head){
     Node* temp = head;
     while(temp!=NULL){

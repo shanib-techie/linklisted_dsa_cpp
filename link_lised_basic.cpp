@@ -69,15 +69,33 @@ int size(Node* head){
     return n;
     
 }
-int main(){
-    Node* a = new Node(10);
-    Node* b = new Node(30);
-    Node* c = new Node(22);
-    Node* d = new Node(55);
 
-    a->next = b;
-    b->next = c;
-    c->next = d;
-    display_by_loop(a);
-    cout<<size(a);
+int main() {
+    int n;
+    cout << "Enter number of nodes: ";
+    cin >> n;
+
+    Node* head = NULL; //nusll->3
+    Node* temp = NULL; //3 
+
+    for (int i = 1; i <= n; i++) {
+        int val;
+        cout << "Enter value for node " << i  << ": ";
+        cin >> val; //3 5
+
+        Node* newNode = new Node(val); //3 5
+
+        if (head == NULL) {
+            head = newNode; //3
+            temp = newNode; //3
+        } else {
+            temp->next = newNode; //  
+            temp = newNode;  // 5
+        }
+    }
+
+    display_by_loop(head);
+    cout << "\nSize = " << size(head);
+
+    return 0;
 }
