@@ -19,10 +19,9 @@ void display_by_loop(Node* head){
 }
 
 Node* del_dupli(Node* head){
-    if(head == NULL || head->next == NULL){
+    if(head== NULL || head->next || NULL){
         return head;
     }
-
     Node* a = head;
     Node* b = head->next;
     while (b!=NULL) { 
@@ -35,8 +34,6 @@ Node* del_dupli(Node* head){
         /* code */
     }
     return head;
-    
-
 }
 int size(Node* head){
     int n = 0;
@@ -67,7 +64,8 @@ int main(){
     f->next = g;
     g->next =h;
     h->next = i;
-    // display_by_loop(a);
+    display_by_loop(a);
+    cout<<endl;
     del_dupli(a);
      display_by_loop(a);
     // cout<<size(a);
