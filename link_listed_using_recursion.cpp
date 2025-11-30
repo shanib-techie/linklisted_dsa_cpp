@@ -12,9 +12,10 @@ class Node{
 };
 
 void display_by_rec(Node* head){
-    if (head == NULL) return;//garbage
-    cout<<head->val<<" ";
-    display_by_rec(head->next);
+    Node* temp= head;
+    if(temp == NULL) return;
+    cout<<temp->val<<" ";
+    display_by_rec(temp->next);
 }
 
 void reverse_display_by_rec(Node* head){
