@@ -17,24 +17,29 @@ void display_by_loop(Node* head){
         temp = temp->next;
     }
 }
-
 Node* del_dupli(Node* head){
-    if(head== NULL || head->next || NULL){
+    if (head == NULL || head->next == NULL) { //base case bna diya agr LL 0 ya 1 ki ha
         return head;
     }
-    Node* a = head;
+
+    Node* a = head;  //do pointer banao yeh ek pehle pr aur dusra ek aage hoge 
     Node* b = head->next;
-    while (b!=NULL) { 
-   while(b!=NULL && b->val == a->val){
-        b = b->next;
+
+    while (b != NULL) {  //jab tak b null ni ho jata  iska matlb a pura treverse kr lega
+        while (b != NULL && b->val == a->val) {
+            b = b->next;
+        }
+
+        a->next = b;
+        a = b;
+
+        if (b != NULL)
+            b = b->next;
     }
-    a->next = b;
-    a =b;
-    if(b!=NULL) b = b->next;
-        /* code */
-    }
+
     return head;
 }
+
 int size(Node* head){
     int n = 0;
     Node* temp = head;

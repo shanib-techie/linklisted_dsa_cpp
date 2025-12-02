@@ -18,7 +18,7 @@ Node* detect_cycle(Node* head){
         slow = slow->next;
         fast = fast->next->next;
         if(slow == fast){
-            flag = true;
+            flag = true;//mattlb cycle hai
             break;
         }
     }
