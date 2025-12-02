@@ -19,7 +19,7 @@ bool check_cycle(Node* head){
     while (fast!=NULL && fast->next!=NULL)
     {
         slow = slow->next;
-        fast = fast->next;  // slow fast ko same speed se badaoo jaha dono barabr maltb cycle h 
+        fast = fast->next->next;  // slow ko 1 se fast ko do se bagao
         if(slow==fast)
         return true;
     }
