@@ -15,40 +15,57 @@ public:
 Node* intersection(Node* a, Node* b){
     Node* temp_a = a;
     Node* temp_b = b;
+
     int size_a  = 0;
     int size_b = 0;
+
+    //pehle LL ke liye uska size
     while(temp_a!=NULL){
         size_a++;
         temp_a = temp_a->next;
     }
+
+    //dusra LL ke liye uska size
         while(temp_b!=NULL){
         size_b++;
         temp_b = temp_b->next;
     }
-    temp_a = a;
+
+
+    temp_a = a;//dono LL ko fhirse head pr lekr ajao
     temp_b = b;
 
-
+    
+    
+    
     if(size_a> size_b){
-        int diff = size_a - size_b;
+        int diff = size_a - size_b;//dono ka different nikaalo
         for(int i = 1;i<=diff;i++){
             temp_a = temp_a->next;
-            temp_b = temp_b->next;
         }
-        return temp_a;
 
+        
     }
-        else //(size_b > size_a)
-        {
-        int diff = size_b - size_a;
+    else //(size_b > size_a)
+    {
+            int diff = size_b - size_a;//dono ka different nikaalo
         for(int i = 1;i<=diff;i++){
-            temp_a = temp_a->next;
+            // temp_a = temp_a->next;
             temp_b = temp_b->next;
-        }
-        return temp_a;    
-
+        } 
     }
+    // ⭐ The ONLY missing part ⭐
+    while (temp_a != NULL && temp_b != NULL){
+        if (temp_a == temp_b)
+            return temp_a;      // intersection mil gaya
+
+        temp_a = temp_a->next;
+        temp_b = temp_b->next;
+    }
+
+    return NULL;   // koi intersection nahi
 }
+
 void display(Node* head) {
     Node* temp = head;
     while (temp != NULL) {
