@@ -41,7 +41,7 @@ Node* intersection(Node* a, Node* b){
     if(size_a> size_b){
         int diff = size_a - size_b;//dono ka different nikaalo
         for(int i = 1;i<=diff;i++){
-            temp_a = temp_a->next;
+            temp_a = temp_a->next; 
         }
 
         

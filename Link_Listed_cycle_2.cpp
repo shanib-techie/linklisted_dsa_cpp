@@ -21,7 +21,7 @@ Node* detect_cycle(Node* head){
             flag = true;//mattlb cycle hai
             break;
         }
-    }
+}
     if(flag== false) return NULL;
     else{
         Node* temp = head;

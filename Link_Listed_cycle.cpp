@@ -52,7 +52,7 @@ int main(){
 
     a->next = b;
     b->next = c;
-    c->next = d;
+    c->next = a;
     // display_by_loop(a);
     // cout<<size(a);
     cout<<(check_cycle(a)?"cycle present":"no cycle");

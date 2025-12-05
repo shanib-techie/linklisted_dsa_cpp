@@ -21,19 +21,33 @@ void display_by_loop(Node* head){
     }
 }
 
-void reverse_display(Node * head){
-    if(head == NULL) return;
-        reverse_display(head->next);
-        cout<<head->val<<" ";
-        // head = head->next;
+// void reverse_display(Node * head){
+//     if(head == NULL) return;
+//         reverse_display(head->next);
+//         cout<<head->val<<" ";
+//         // head = head->next;
 
+//     }
+    // doubly LL ko recursive se bhi kr skte th lekin uski time comple jyada hoti h isliye yeh mathod
+void dis_rever_doubly(Node* tail){
+    while (tail)
+    {
+        /* code */cout<<tail->val<<" ";
+        tail = tail->pre;
     }
+    cout<<endl;
+     }
 
-// }void reverse_display_by_rec(Node* head){
-//     if (head == NULL) return;
-//     reverse_display_by_rec(head->next);
-//     cout<<head->val<<" ";
-// }
+     //we can real at head in doubly LL if we dont h =ave head
+     
+int head_of_ll(Node* tail){
+    while (tail->pre != NULL)
+    {
+        tail = tail->pre;
+    }
+    return tail->val;
+    
+}     
 int size(Node* head){
     int n = 0;
     Node* temp = head;
@@ -62,5 +76,8 @@ int main(){
     display_by_loop(a);
     cout<<size(a);
     cout<<"REVERSE DISPLAY : ";
-    reverse_display(a);
+    // reverse_display(a);
+    dis_rever_doubly(e);
+    cout<<"\n";
+    cout<<"YOUR HEAD = "<<head_of_ll(e);
 }
