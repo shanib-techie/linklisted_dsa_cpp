@@ -77,7 +77,7 @@ int main(){
     cout<<size(a);
     cout<<"REVERSE DISPLAY : ";
     // reverse_display(a);
-    dis_rever_doubly(e);
+    dis_rever_doubly(e);d
     cout<<"\n";
     cout<<"YOUR HEAD = "<<head_of_ll(e);
 }
